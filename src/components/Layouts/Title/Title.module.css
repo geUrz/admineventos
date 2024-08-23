@@ -1,0 +1,35 @@
+.title{
+  padding: 50px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1{
+  font-size: 30px;
+  font-family: 'Bebas' !important;
+  color: var(--clrGR0);
+}
+
+.title svg, .title path{
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg9);
+  position: absolute;
+  left: 24px;
+  font-size: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.title svg:hover, .title path:hover{
+  background-color: var(--clrGR1);
+}
+
+.title svg:active, .title path:active{
+  background-color: var(--clrGR2);
+}

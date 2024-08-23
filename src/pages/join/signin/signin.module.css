@@ -1,0 +1,72 @@
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo{
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img{
+  height: 60px;
+}
+
+.boxForm{
+  margin-top: 50px;
+  padding: 60px 0;
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clrM0);
+}
+
+.user{
+  padding-bottom: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user svg, .user path{
+  font-size: 80px;
+}
+
+.user h1{
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.link{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link a{
+  margin-top: 10px;
+  font-size: 14.5px;
+  color: azure;
+  cursor: pointer;
+}
+
+.error{
+  margin: 5px 0 0 0 !important;
+  font-size: 12px;
+  color: var(--clrR0);
+}

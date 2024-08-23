@@ -1,0 +1,46 @@
+:root{
+  --bg0:rgb(14, 14, 14);
+  --bg1:rgb(24, 24, 24);
+  --bg2: rgb(32, 32, 32);
+  --bg3: rgb(40, 40, 40);
+  --bg4: rgb(48, 48, 48);
+  --bg5: rgb(56, 56, 56);
+  --bg6: rgb(64, 64, 64);
+  --bg7: rgb(72, 72, 72);
+  --bg8: rgb(80, 80, 80);
+  --bg9: rgb(95, 95, 95);
+  --bg10: rgb(165, 165, 165);
+  --bg11: rgb(187, 187, 187);
+  
+  --clrM0: #B828F3;
+  --clrM1: #c03af5;
+  --clrM2: #c746fa;
+  --clrM3: #cb55fa;
+  --clrM4: #d16bfa;
+
+  --clrR0: #FF287B;
+  --clrR1: #ff3985;
+  --clrR2: #fd468c;
+  --clrR3: #fc5394;
+  --clrR4: #fc67a0;
+
+  --clrA0: #FFD74D;
+  --clrA1: #FFD74D;
+  --clrA2: #FF6864;
+  --clrA3: rgb(224, 114, 45);
+  --clrA4: rgb(235, 126, 58);
+
+  --clrN0: #FF6864;
+  --clrN1: #FFD74D;
+  --clrN2: #FF6864;
+  --clrN3: rgb(224, 114, 45);
+  --clrN4: rgb(235, 126, 58);
+
+  --clrGR0: rgb(165, 165, 165);
+  --clrGR1: rgb(184, 184, 184);
+  --clrGR2: rgb(202, 202, 202);
+  --clrGR3: rgb(223, 223, 223);
+  --clrGR4: rgb(233, 233, 233);
+  --clrGR5: rgb(243, 243, 243);
+
+}

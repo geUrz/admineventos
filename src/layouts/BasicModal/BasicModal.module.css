@@ -1,0 +1,23 @@
+.modal{
+  padding: 30px 0;
+  width: 90% !important;
+  max-width: 400px !important;
+  background-color: azure !important;
+}
+
+.header, .content{
+  background-color: azure !important;
+}
+
+.header{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.header h1{
+  font-size: 22.5px;
+  font-family: 'Bebas' !important;
+  color: var(--clrM0);
+}
+

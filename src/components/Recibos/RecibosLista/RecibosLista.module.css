@@ -1,0 +1,90 @@
+.main{
+  padding: 0 10px !important;
+  width: 100%;
+  height: auto;
+}
+
+.rowMap{
+  padding: 8px 0 !important;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg1);
+}
+
+.rowMap:hover{
+  background-color: var(--bg2);
+}
+
+.rowMap h1{
+  height: auto;
+  font-size: 14px;
+}
+
+.rowMap h1:nth-child(1){
+  width: 16%;
+  font-size: 12.5px;
+  text-align: center;
+}
+
+.rowMap h1:nth-child(2){
+  padding-left: 5px !important;
+  width: 30%;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.rowMap h1:nth-child(3){
+  padding-left: 5px !important;
+  width: 60%;
+  text-align: left;
+}
+
+.rowMap h1:nth-child(4){
+  width: 10%;
+  text-align: center;
+}
+
+.rowMap svg, .rowMap path{
+  font-size: 16.5px;
+  color: var(--clr2);
+  cursor: pointer;
+}
+
+.iconClose{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.iconClose svg, .iconClose path{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.iconCheck{
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg2);
+  cursor: pointer;
+}
+
+.iconCheck:hover{
+  background-color: var(--bg3);
+}
+
+.iconCheck:active{
+  background-color: var(--bg4);
+}
+
+.iconCheck svg, .iconCheck path{
+  font-size: 22px;
+  color: var(--clr1);
+  cursor: pointer;
+}

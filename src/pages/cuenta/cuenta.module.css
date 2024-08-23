@@ -1,0 +1,60 @@
+.main{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section svg, .section path{
+  font-size: 80px;
+  color: var(--bg9);
+}
+
+.section h1{
+  margin-top: 5px;
+  font-size: 24px;
+  color: black;
+}
+
+.section h2{
+  margin-top: 5px;
+  font-size: 14px;
+  color: black;
+}
+
+.iconEdit{
+  padding: 20px 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconEdit div{
+  cursor: pointer;
+}
+
+.iconEdit div:hover path{
+  color: var(--clrM0);
+}
+
+.iconEdit div:active path{
+  color: var(--clrM1);
+}
+
+.iconEdit svg, .iconEdit path{
+  font-size: 25px;
+  color: var(--clrM2);
+  cursor: pointer;
+}

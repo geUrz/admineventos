@@ -1,0 +1,93 @@
+.ui.form{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ui.form input, .ui.form textarea{
+  padding-left: 5px !important;
+  width: 300px !important;
+  font-size: 12.5px !important;
+  color: black !important;
+  background-color: azure !important;
+  border-color: var(--clrM2) !important;
+}
+
+.ui.form input:focus, .ui.form textarea:focus, .ui.form select:focus{
+  border-color: var(--clrM0) !important;
+}
+
+.ui.form select{
+  padding-left: 1px !important;
+  width: 300px !important;
+  font-size: 12.5px;
+  text-transform: capitalize;
+  color: black !important;
+  background-color: azure !important;
+} 
+
+.ui.form option{
+  color: var(--clrGR40) !important;
+}
+
+.fields{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.field{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.ui.form button{
+  margin-top: 30px;
+}
+
+.ui.circular.label{
+  color: azure;
+  font-size: 6.5px;
+  cursor: pointer;
+}
+
+.ui.label{
+  padding: 8px 4.5px !important;
+  width: 100%;
+  height: auto;
+  font-size: 14px;
+  color: var(--clrGR0) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start;
+  background-color: azure !important;
+}
+
+/* .ui input{
+  border: none !important;
+} */
+
+.ui.page.modals{
+  background-color: rgba(0, 0, 0, .85 );
+}
+
+.field.error input, .field.error select, .field.error textarea{
+  border: 1px solid var(--clrR0) !important;
+}
+
+.rbc-agenda-view table{
+  background-color: var(--bg1);
+  border: none !important;
+}
+
+.rbc-agenda-table tbody > tr > td{
+  background-color: var(--bg2);
+  border: none !important;
+}
+
+
+

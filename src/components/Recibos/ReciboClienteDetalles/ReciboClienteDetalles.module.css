@@ -1,0 +1,111 @@
+.section{
+  width: 100%;
+  height: auto;
+}
+
+.box1, .box2, .box3{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1 div, .box2 div, .box3 div{
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.box1 h1, .box2 h1, .box3 h1{
+  font-size: 14px;
+  color: var(--clr2);
+}
+
+.box1 h2, .box2 h2, .box3 h2{
+  font-size: 14px;
+}
+
+.box1 div:nth-child(2) h2, .box2 div:nth-child(1) h2, .box3 div:nth-child(1) h2{
+  text-transform: capitalize;
+}
+
+.box3 div:nth-child(2) h2{
+  text-transform: lowercase;
+}
+
+.iconEdit{
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconEdit div{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg2);
+  cursor: pointer;
+}
+
+.iconEdit svg, .iconEdit path{
+  color: var(--clr2);
+}
+
+.iconEdit div:hover{
+  background-color: var(--bg3);
+}
+
+.iconEdit div:active{
+  background-color: var(--bg4);
+}
+
+.iconEdit svg, .iconEdit path{
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.iconCheck{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg2);
+  cursor: pointer;
+}
+
+.iconCheck:hover{
+  background-color: var(--bg3);
+}
+
+.iconCheck:active{
+  background-color: var(--bg4);
+}
+
+.iconClose{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.iconCheck svg, .iconCheck path{
+  font-size: 22px;
+  color: var(--clrBL0);
+  cursor: pointer;
+}
+
+.iconClose svg, .iconClose path{
+  font-size: 18px;
+  cursor: pointer;
+}

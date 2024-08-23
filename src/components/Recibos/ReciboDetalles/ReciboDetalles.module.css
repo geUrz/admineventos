@@ -1,0 +1,327 @@
+.section{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.box1 h1{
+  font-size: 14px;
+}
+
+.box1_1, .box1_2{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box1_1 div:nth-child(1) h1:nth-child(2){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1_1 div:nth-child(1) svg, .box1_1 div:nth-child(1) path{
+  margin-left: 5px;
+  font-size: 14.5px;
+  color: var(--clr1);
+  cursor: pointer;
+}
+
+.box1_1 div:nth-child(1):hover svg, .box1_1 div:nth-child(1):hover path{
+  color: var(--clr2);
+}
+
+.box1_1 div:nth-child(1):active svg, .box1_1 div:nth-child(1):active path{
+  color: var(--clr3);
+}
+
+.box1_1 h1:nth-child(1), .box1_2 h1:nth-child(1){
+  color: var(--clr2);
+}
+
+.box1_1 div:nth-child(2) h1, .box1_2 div:nth-child(2) h1{
+  text-align: right;
+}
+
+.box1_1 div:nth-child(2) h1:nth-child(2), .box1_2 div:nth-child(2) h1:nth-child(2){
+  text-transform: uppercase;
+  font-size: 11.5px;
+}
+
+.box1_2{
+  padding: 10px 0;
+}
+
+.box1_2 div:nth-child(1){
+  padding-right: 10px;
+}
+
+.boxMain{
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.box3_0{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.iconFirmaPlus{
+  margin-bottom: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg1);
+  cursor: pointer;
+}
+
+.iconFirmaPlus:hover{
+  background-color: var(--bg2);
+}
+
+.iconFirmaPlus:active{
+  background-color: var(--bg3);
+}
+
+.iconFirmaPlus svg, .iconFirmaPlus path{
+  cursor: pointer;
+}
+
+.linea{
+  margin: 10px 0 5px 0;
+  width: 100%;
+  height: 1px;
+  background-color: azure;
+}
+
+.activateTrash{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(155, 0, 0, .9);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.activateTrash:hover{
+  background-color: rgba(196, 0, 0, .9);
+}
+
+.activateTrash div{
+  cursor: pointer;
+}
+
+.activateTrash svg, .activateTrash path{
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.firmaIsMobile{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.firmaIsMobile svg, .firmaIsMobile path{
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.firmaIsMobile svg:hover path{
+  color: red;
+}
+
+.box3_0 h1{
+  font-size: 12px;
+}
+
+.formNota{
+  margin-top: 20px;
+}
+
+.box3{
+  padding-right: 3.5px !important;
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.box3 h1{
+  font-size: 11.5px;
+}
+
+.box3_1{
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.box3_2 h1{
+  padding: 3.5px 0 !important;
+  font-size: 11px;
+  text-align: right;
+}
+
+.iconPlus{
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconPlus div{
+  padding: 8px 10px;
+  background-color: var(--bg1);
+  cursor: pointer;
+}
+
+.iconPlus div:hover{
+  background-color: var(--bg2);
+}
+
+.iconPlus div:active{
+  background-color: var(--bg3);
+}
+
+.iconPlus svg, .iconPlus path{
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.toggleOFF, .toggleON{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.toggleOFF svg, .toggleON svg, .toggleOFF path, .toggleON path{
+  margin-right: 5px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.toggleON svg, .toggleON path{
+  color: var(--clr3);
+}
+
+.footerDetalles{
+  padding: 0 10px 0 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+}
+
+.footerDetalles h1{
+  font-size: 12px;
+}
+
+.footerDetalles span{
+  color: var(--clr2);
+}
+
+.footerDetalles svg, .footerDetalles path{
+  padding: 8.5px;
+  font-size: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.footerDetalles svg:hover, .footerDetalles path:hover{
+  background-color: var(--bg2);
+}
+
+.footerDetalles svg:active, .footerDetalles path:active{
+  background-color: var(--bg3);
+}
+
+.iconClose svg, .iconClose path{
+  padding: 8px;
+  font-size: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.iconClose svg:hover,.iconClose path:hover{
+  background-color: var(--bg3);
+}
+
+.iconClose svg:active,.iconClose path:active{
+  background-color: var(--bg4);
+}
+
+.iconCheck{
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg2);
+  cursor: pointer;
+}
+
+.iconCheck:hover{
+  background-color: var(--bg3);
+}
+
+.iconCheck:active{
+  background-color: var(--bg4);
+}
+
+.iconCheck svg, .iconCheck path{
+  font-size: 22px;
+  color: var(--clr1);
+  cursor: pointer;
+}
+

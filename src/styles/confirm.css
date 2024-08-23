@@ -1,0 +1,67 @@
+.ui.mini.modal{
+  padding: 20px 0 25px 0;
+  max-width: 350px !important;
+  background-color: var(--bg1) !important;
+}
+
+.content, .actions{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: var(--bg1) !important;
+}
+
+.ui.button, .ui.button.primary{
+  margin-top: 20px;
+  color: azure !important;
+  font-weight: 200 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui.button.negative:hover{
+  background-color: rgb(255, 22, 22) !important;
+}
+
+.ui.button.negative:active, .ui.button.negative:focus{
+  background-color: rgb(255, 43, 43) !important;
+}
+
+.ui.button.secondary{
+  margin: 20px 0 !important;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg1) !important;
+}
+
+.ui.button.secondary svg, .ui.button.secondary path{
+  cursor: pointer;
+}
+
+.ui.button.secondary:hover{
+  color: azure !important;
+  background-color: var(--bg2) !important;
+}
+
+.ui.button.secondary:active, .ui.button.secondary:focus{
+  color: azure !important;
+  background-color: var(--bg3) !important;
+}
+
+
+.ui.button.negative svg, .ui.button.negative path{
+  cursor: pointer;
+}
+
+.ui.button.primary{
+  background-color: var(--clrR0) !important;
+}
+
+.ui.button.primary:hover{
+  background-color: var(--clrR1) !important;
+}
+
+.ui.button.primary:active, .ui.button.primary:focus{
+  background-color: var(--clrR2) !important;
+}

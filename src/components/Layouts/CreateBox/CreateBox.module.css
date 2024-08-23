@@ -1,0 +1,32 @@
+.main{
+  padding: 10px;
+  margin-left: 5px;
+  width: 130px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clrM0);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main:hover{
+  background-color: var(--clrM1);
+}
+
+.main:active{
+  background-color: var(--clrM2);
+}
+
+.main svg, .main path{
+  font-size: 46px;
+  color: var(--clrBL4);
+  cursor: pointer;
+}
+
+.main h1{
+  font-size: 24px;
+  font-family: 'Bebas' !important;
+  cursor: pointer;
+}

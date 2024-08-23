@@ -1,0 +1,19 @@
+.signatureContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.signatureCanvas {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 150px;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
