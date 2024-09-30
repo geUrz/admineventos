@@ -3,8 +3,8 @@
 @import './confirm.css'; 
 
 @font-face {
-  font-family: 'Mulish';
-  src: url('../../public/fonts/Mulish/static/Mulish-Light.ttf');
+  font-family: 'Roboto';
+  src: url('../../public/fonts/Roboto/Roboto-Light.ttf');
 }
 
 @font-face {
@@ -16,18 +16,19 @@
 *{
   padding: 0;
   margin: 0;
-  font-family: 'Mulish' !important;
+  font-family: 'Roboto' !important;
   font-weight: 200 !important;
   color: azure;
   cursor: default;
 }
 
 body{
-  background-color: azure !important;
+  background-color: var(--body) !important;
 }
 
 h1,h2,h3,h4{
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 li.slick-active{

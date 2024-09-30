@@ -1,54 +1,105 @@
-.main{
-  padding: 0 10px !important;
+.mainRow{
+  padding: 20px 10px;
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.rowMap{
-  padding: 8px 0 !important;
+.mainRowMap{
+  padding: 5px 0;
+  margin: 2.5px 0;
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg1);
+  background-color: var(--clrGR5);
+  border-radius: 5px;
 }
 
-.rowMap:hover{
-  background-color: var(--bg2);
+.mainRowMap:hover{
+  background-color: var(--clrGR4);
 }
 
-.rowMap h1{
-  height: auto;
-  font-size: 14px;
+.mainRowMap:active{
+  background-color: var(--clrGR3);
 }
 
-.rowMap h1:nth-child(1){
-  width: 16%;
-  font-size: 12.5px;
-  text-align: center;
-}
-
-.rowMap h1:nth-child(2){
-  padding-left: 5px !important;
-  width: 60%;
-  text-transform: capitalize;
-  text-align: left;
-}
-
-.rowMap h1:nth-child(3){
-  padding-left: 5px !important;
-  width: 50%;
-  text-align: left;
-}
-
-.rowMap h1:nth-child(4){
+.mainRowMap1{
   width: 10%;
-  text-align: center;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.rowMap svg, .rowMap path{
-  font-size: 16.5px;
-  color: var(--clrBL2);
+.mainRowMap1 svg, .mainRowMap1 path{
+  font-size: 20px;
+  color: var(--clrGR0);
+}
+
+.mainRowMap2{
+  padding: 5px 0;
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mainRowMap2 div:nth-child(1){
+  padding: 0 2.5px;
+  width: 45%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mainRowMap2 div:nth-child(2){
+  padding: 0 2.5px;
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mainRowMap2 div:nth-child(3){
+  padding: 0 5px;
+  width: 11.5%;
+  height: 36.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainRowMap2 div:nth-child(3) svg, .mainRowMap2 div:nth-child(3) path{
+  font-size: 20px;
+  color: var(--clrGR0);
   cursor: pointer;
+}
+
+.mainRowMap2 div:nth-child(3) svg:hover path{
+  color: var(--clrGR1);
+}
+
+.mainRowMap2 div:nth-child(3) svg:active path{
+  color: var(--clrGR2);
+}
+
+.mainRowMap2 h1{
+  font-size: 14px;
+  color: black;
+  font-weight: 600 !important;
+}
+
+.mainRowMap2 h2{
+  font-size: 14px;
+  color: var(--clrGR0);
 }

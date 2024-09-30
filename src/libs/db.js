@@ -1,20 +1,19 @@
-/* import mysql from 'mysql2/promise'
+import mysql from 'mysql2/promise';
 
-// Configura la conexión a la base de datos
 const connection = mysql.createPool({
-  host: 'viaduct.proxy.rlwy.net',   
-  port: 27232,   
-  user: 'root',           
-  password: 'kExpvQRLAnigUHjdEvNouHCWAVDtwGQS',    
-  database: 'railway',  
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
-})
+});
 
-export default connection  */ 
+export default connection  
 
-import mysql from 'mysql2/promise';
+/* import mysql from 'mysql2/promise';
 
 // Configura la conexión a la base de datos
 const connection  = mysql.createPool({
@@ -27,5 +26,5 @@ const connection  = mysql.createPool({
   queueLimit: 0
 });
 
-export default connection   
+export default connection   */ 
 

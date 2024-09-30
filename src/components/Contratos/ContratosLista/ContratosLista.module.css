@@ -9,7 +9,7 @@
 }
 
 .mainRowMap{
-  padding: 10px 0;
+  padding: 5px 0;
   margin: 2.5px 0;
   width: 100%;
   height: auto;
@@ -18,6 +18,14 @@
   justify-content: center;
   background-color: var(--clrGR5);
   border-radius: 5px;
+}
+
+.mainRowMap:hover{
+  background-color: var(--clrGR4);
+}
+
+.mainRowMap:active{
+  background-color: var(--clrGR3);
 }
 
 .mainRowMap1{
@@ -29,7 +37,7 @@
 }
 
 .mainRowMap1 svg, .mainRowMap1 path{
-  font-size: 42px;
+  font-size: 20px;
   color: var(--clrGR0);
 }
 
@@ -38,13 +46,23 @@
   width: 90%;
   height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
-.mainRowMap2 div:nth-child(1), .mainRowMap2 div:nth-child(2){
+.mainRowMap2 div:nth-child(1){
   padding: 0 2.5px;
-  width: 45%;
+  width: 35%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mainRowMap2 div:nth-child(2){
+  padding: 0 2.5px;
+  width: 60%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -54,8 +72,8 @@
 
 .mainRowMap2 div:nth-child(3){
   padding: 0 5px;
-  width: 10%;
-  height: auto;
+  width: 11.5%;
+  height: 36.5px;
   display: flex;
   align-items: center;
   justify-content: center;

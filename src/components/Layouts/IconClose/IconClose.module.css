@@ -11,15 +11,15 @@
 .icon svg, .icon path{
   padding: 8px;
   font-size: 42px;
-  color: var(--bg8);
+  color: var(--clrGR000);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .icon svg:hover,.icon path:hover{
-  background-color: var(--clrGR1);
+  background-color: var(--clrGR3);
 }
 
 .icon svg:active,.icon path:active{
-  background-color: var(--clrGR2);
+  background-color: var(--clrGR4);
 }

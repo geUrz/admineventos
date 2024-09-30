@@ -12,7 +12,7 @@
 }
 
 .section svg, .section path{
-  color: var(--bg5);
+  color: var(--clrGR000);
 }
 
 .section svg:nth-child(1), .section path:nth-child(1){
@@ -22,7 +22,7 @@
 .section svg:nth-child(2), .section path:nth-child(2){
   padding: 2px;
   font-size: 28px;
-  background-color: var(--bg1);
+  background-color: var(--body);
   border-radius: 50%;
   position: absolute;
   top: -5px;

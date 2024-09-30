@@ -6,7 +6,7 @@ import styles from './ClienteModForm.module.css'
 
 export function ClienteModForm(props) {
 
-  const { reload, onReload, clienteId, onOpenCloseEdit, onToastSuccess } = props
+  const { reload, onReload, clienteId, onOpenCloseEdit, onToastSuccessClienteMod } = props
 
   const [cliente, setCliente] = useState('')
   const [contacto, setContacto] = useState('')
@@ -29,7 +29,7 @@ export function ClienteModForm(props) {
     try {
       await axios.put(`/api/clientes?id=${clienteId.id}`, { cliente, contacto, cel, direccion, email })
       onOpenCloseEdit()
-      onToastSuccess()
+      onToastSuccessClienteMod()
       onReload()
     } catch (error) {
       console.error('Error al actualizar el cliente:', error)
@@ -88,8 +88,8 @@ export function ClienteModForm(props) {
               />
             </FormField>
           </FormGroup>
+        <Button primary onClick={handleSubmit}>Guardar</Button>
         </Form>
-        <Button primary onClick={handleSubmit}>Actualizar</Button>
       </div>
 
     </>

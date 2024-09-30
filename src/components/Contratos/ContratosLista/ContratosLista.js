@@ -2,16 +2,17 @@ import { ListEmpty, Loading } from '@/components/Layouts'
 import { size, map } from 'lodash'
 import styles from './ContratosLista.module.css'
 import { FaFileContract, FaInfoCircle } from 'react-icons/fa'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BasicModal } from '@/layouts'
 import { ContratosDetalles } from '../ContratosDetalles'
 import axios from 'axios'
 
 export function ContratosLista(props) {
 
-  const { reload, onReload, contratos } = props
+  const { reload, onReload, contratos, onToastSuccessContratoMod, onToastSuccessContratoDel } = props
 
   const [show, setShow] = useState(false)
+  const [showLoading, setShowLoading] = useState(true)
 
   const [contratoSelec, setContratoSelec] = useState(null)
 
@@ -34,11 +35,19 @@ export function ContratosLista(props) {
     setContratoSelec(null)
   }
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoading(false)
+    }, 800) 
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
 
     <>
 
-      {!contratos ? (
+      {showLoading ? (
         <Loading size={45} loading={1} />
       ) : (
         size(contratos) === 0 ? (
@@ -52,7 +61,7 @@ export function ContratosLista(props) {
                 </div>
                 <div className={styles.mainRowMap2}>
                   <div>
-                    <h1>Evento</h1>
+                    <h1>Contrato</h1>
                     <h2>{contrato.tipo}</h2>
                   </div>
                   <div>
@@ -70,7 +79,7 @@ export function ContratosLista(props) {
       )}
 
       <BasicModal title='detalles del contrato' show={show} onClose={onOpenClose}>
-        <ContratosDetalles contrato={contratoSelec} onOpenClose={handleCloseModal} />
+        <ContratosDetalles reload={reload} onReload={onReload} contrato={contratoSelec} onOpenCloseDetalles={handleCloseModal} onToastSuccessContratoMod={onToastSuccessContratoMod} onToastSuccessContratoDel={onToastSuccessContratoDel} />
       </BasicModal>
 
     </>

@@ -2,7 +2,7 @@ import { ProtectedRoute } from '@/components/Layouts'
 import { BasicLayout } from '@/layouts'
 import { Box } from '@/components/Panel'
 import styles from './panel.module.css'
-import { FaCalendarAlt, FaFileAlt, FaFileContract, FaFileInvoice, FaFileInvoiceDollar, FaRegFileCode, FaUserFriends, FaUsers } from 'react-icons/fa'
+import { FaCalendarAlt, FaFileAlt, FaFileArchive, FaFileContract, FaFileInvoice, FaFileInvoiceDollar, FaFileMedical, FaFilePrescription, FaFileSignature, FaRegFile, FaRegFileAlt, FaRegFileArchive, FaRegFileCode, FaUserFriends, FaUsers } from 'react-icons/fa'
 
 export default function Panel() {
 
@@ -15,28 +15,28 @@ export default function Panel() {
 
         <div className={styles.main}>
           <div className={styles.section}>
-            <Box link='eventos' title='eventos'>
+            <Box link='eventos' title='Eventos'>
               <FaCalendarAlt />
             </Box>
-            <Box link='contratos' title='contratos'>
+            <Box link='contratos' title='Contratos'>
               <FaFileContract />
             </Box>
-            <Box link='cotizaciones' title='cotizaciones'>
-              <FaFileAlt />
-            </Box>
-            <Box link='recibos' title='Recibos'>
+            <Box link='cotizaciones' title='Cotizaciones'>
               <FaFileInvoice />
             </Box>
-            <Box link='facturas' title='facturas'>
-              <FaRegFileCode />
+            <Box link='recibos' title='Recibos'>
+              <FaFileAlt />
             </Box>
-            <Box link='cuentas' title='cuentas'>
+            <Box link='facturas' title='Facturas'>
+              <FaFileSignature />
+            </Box>
+            <Box link='cuentas' title='Cuentas'>
               <FaFileInvoiceDollar />
             </Box>
-            <Box link='clientes' title='clientes'>
+            <Box link='clientes' title='Clientes'>
               <FaUsers />
             </Box>
-            <Box link='invitados' title='invitados'>
+            <Box link='invitados' title='Invitados'>
               <FaUserFriends />
             </Box>
           </div>

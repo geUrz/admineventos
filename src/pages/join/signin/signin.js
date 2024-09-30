@@ -1,7 +1,7 @@
 import { Button, Form, FormField, FormGroup, Image, Input, Label } from 'semantic-ui-react'
 import { useEffect, useState, useRef } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
-import { FaUser } from 'react-icons/fa'
+import { FaUser, FaUserCircle } from 'react-icons/fa'
 import Link from 'next/link'
 import { useRedirectIfAuthenticated } from '@/hooks'
 import styles from './signin.module.css'
@@ -32,7 +32,7 @@ export default function Signin() {
   }
 
   const handleKeyDown = (e) => {
-    if (e.ctrlKey && e.key === 'l') {
+    if (e.ctrlKey && e.key === '0') {
       e.preventDefault()
       setActivate((prevState) => !prevState)
     }
@@ -100,7 +100,7 @@ export default function Signin() {
         </div>
         <div className={styles.boxForm}>
           <div className={styles.user}>
-            <FaUser onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} />
+            <FaUserCircle onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} />
             <h1>Iniciar sesión</h1>
           </div>
 
@@ -128,7 +128,7 @@ export default function Signin() {
               </FormField>
             </FormGroup>
             {error && <p className={styles.error}>{error}</p>}
-            <Button primary type='submit'>Iniciar sesión</Button>
+            <Button secondary type='submit'>Iniciar sesión</Button>
           </Form>
 
           {activate ? (

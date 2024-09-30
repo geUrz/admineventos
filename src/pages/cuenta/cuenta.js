@@ -15,8 +15,8 @@ export default function Cuenta() {
 
   const { user, logout, loading } = useAuth()
 
-  if (loading) {
-    <Loading size={45} loading={1} />
+  if (loading || !user) {
+    return <Loading size={45} loading={1} />
   }
 
   return (
@@ -25,36 +25,49 @@ export default function Cuenta() {
 
       <Title title='Cuenta' iconBack />
 
-        <div className={styles.main}>
-          <div className={styles.section}>
-            <FaUser />
-            
-            {!user ? (
-              ''
-            ) : (
-              <>
-              
-                <h1>{user.usuario}</h1>
-                <h2>{user.email}</h2>
-              
-              </>
-            )}
+      <div className={styles.main}>
+        <div className={styles.section}>
+          <FaUser />
 
+          {!user ? (
+            ''
+          ) : (
+            <>
+
+              <h1>{user.usuario}</h1>
+              <div>
+                <h1>Nombre:</h1>
+                <h2>{user.nombre}</h2>
+              </div>
+              <div>
+                <h1>Correo:</h1>
+                <h2>{user.email}</h2>
+              </div>
+              <div>
+                <h1>Nivel:</h1>
+                <h2>{user.nivel}</h2>
+              </div>
+
+            </>
+          )}
+
+          {user.nivel === 'admin' ?
             <div className={styles.iconEdit}>
               <div onClick={onOpenClose}>
                 <FaEdit />
               </div>
-            </div>
+            </div> : ''
+          }
 
-            <Button negative onClick={logout}>
-              Cerrar sesión
-            </Button>
-          </div>
+          <Button negative onClick={logout}>
+            Cerrar sesión
+          </Button>
         </div>
+      </div>
 
-        <BasicModal title='modificar cuenta' show={show} onClose={onOpenClose}>
-          <ModCuentaForm onOpenClose={onOpenClose} />
-        </BasicModal>
+      <BasicModal title='modificar cuenta' show={show} onClose={onOpenClose}>
+        <ModCuentaForm onOpenClose={onOpenClose} />
+      </BasicModal>
 
     </ProtectedRoute>
 

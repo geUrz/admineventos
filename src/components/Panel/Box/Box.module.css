@@ -1,8 +1,9 @@
 .box{
   margin: 0 10px 30px 10px;
-  width: 150px;
-  height: 160px;
+  width: 130px;
+  height: 140px;
   background-color: var(--clrM0);
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -25,14 +26,12 @@
 }
 
 .box svg, .box path{
-  margin-right: 5px;
-  font-size: 50px;
+  font-size: 40px;
   cursor: pointer;
 }
 
 .box h1{
   margin-top: 15px;
-  font-size: 22px;
-  font-family: 'Bebas' !important;
+  font-size: 14px;
   cursor: pointer;
 }

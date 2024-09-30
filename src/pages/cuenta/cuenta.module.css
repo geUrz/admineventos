@@ -17,19 +17,32 @@
 
 .section svg, .section path{
   font-size: 80px;
-  color: var(--bg9);
+  color: var(--clrGR000);
 }
 
-.section h1{
+.section > h1{
   margin-top: 5px;
   font-size: 24px;
-  color: black;
+  color: var(--clrM0);
+}
+
+.section div{
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section div h1{
+  font-size: 14px;
+  font-weight: 600 !important;
+  color: var(--clrM0);
 }
 
 .section h2{
-  margin-top: 5px;
+  margin-left: 5px;
   font-size: 14px;
-  color: black;
+  color: var(--clrGR000);
 }
 
 .iconEdit{

@@ -2,7 +2,7 @@ import connection from '@/libs/db'; // Asegúrate de importar la configuración 
 import bcrypt from 'bcrypt';
 
 export default async function updateUserHandler(req, res) {
-  const { userId, newUsuario, newEmail, newCel, newNivel, newPassword } = req.body;
+  const { userId, newNombre, newUsuario, newEmail, newNivel, newPassword } = req.body;
 
   try {
     // Verificar si el nuevo email o el nuevo nombre de usuario ya están registrados por otro usuario
@@ -35,16 +35,16 @@ export default async function updateUserHandler(req, res) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
 
+    const updatedNombre = newNombre || currentUser[0].nombre;
     const updatedUsuario = newUsuario || currentUser[0].usuario;
     const updatedEmail = newEmail || currentUser[0].email;
-    const updatedCel = newCel || currentUser[0].cel;
     const updatedNivel = newNivel || currentUser[0].nivel;
     const updatedPassword = hashedPassword || currentUser[0].password;
 
     // Actualizar el usuario en la base de datos
     await connection.query(
-      'UPDATE usuarios SET usuario = ?, email = ?, cel = ?, nivel = ?, password = ? WHERE id = ?',
-      [updatedUsuario, updatedEmail, updatedCel, updatedNivel, updatedPassword, userId]
+      'UPDATE usuarios SET nombre = ?, usuario = ?, email = ?, nivel = ?, password = ? WHERE id = ?',
+      [updatedNombre, updatedUsuario, updatedEmail, updatedNivel, updatedPassword, userId]
     );
 
     // Devolver una respuesta exitosa

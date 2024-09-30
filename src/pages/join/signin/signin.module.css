@@ -28,7 +28,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--clrM0);
+  box-shadow: rgba(22, 22, 22, 0.2) 0px 8px 24px;
 }
 
 .user{
@@ -42,7 +42,8 @@
 }
 
 .user svg, .user path{
-  font-size: 80px;
+  color: var(--clrGR000);
+  font-size: 100px;
 }
 
 .user h1{
@@ -61,7 +62,7 @@
 .link a{
   margin-top: 10px;
   font-size: 14.5px;
-  color: azure;
+  color: var(--clrGR000);
   cursor: pointer;
 }
 

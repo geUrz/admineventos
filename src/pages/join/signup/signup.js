@@ -1,4 +1,4 @@
-import { Button, Form, FormField, FormGroup, Image, Input, Label } from 'semantic-ui-react'
+import { Button, Form, FormField, FormGroup, Image, Input, Label, Message } from 'semantic-ui-react'
 import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
@@ -14,6 +14,7 @@ export default function Signup() {
   const [errors, setErrors] = useState({})
 
   const [credentials, setCredentials] = useState({
+    nombre: '',
     usuario: '',
     email: '',
     nivel: '',
@@ -34,6 +35,10 @@ export default function Signup() {
 
   const validarFormSignUp = () => {
     const newErrors = {}
+
+    if (!credentials.nombre) {
+      newErrors.nombre = 'El campo es requerido'
+    }
 
     if (!credentials.usuario) {
       newErrors.usuario = 'El campo es requerido'
@@ -79,6 +84,7 @@ export default function Signup() {
       router.push('/join/signin')
 
       setCredentials({
+        nombre: '',
         usuario: '',
         email: '',
         nivel: '',
@@ -102,87 +108,100 @@ export default function Signup() {
 
   return (
 
-      <div className={styles.main}>
-        <div className={styles.logo}>
-          <Image src='/img/admineventos_join.webp' />
-        </div>
-        <div className={styles.boxForm}>
-          <div className={styles.user}>
-            <FaUserPlus />
-            <h1>Crear usuario</h1>
-          </div>
-
-          <Form onSubmit={handleSubmit}>
-            <FormGroup>
-              <FormField error={!!errors.usuario}>
-                <Label>Usuario</Label>
-                <Input
-                  name='usuario'
-                  type='text'
-                  value={credentials.usuario}
-                  onChange={handleChange}
-                />
-                {errors.usuario && <span className={styles.error}>{errors.usuario}</span>}
-              </FormField>
-              <FormField error={!!errors.email}>
-                <Label>Correo</Label>
-                <Input
-                  name='email'
-                  type='email'
-                  value={credentials.email}
-                  onChange={handleChange}
-                />
-                {errors.email && <span className={styles.error}>{errors.email}</span>}
-              </FormField>
-              <FormField error={!!errors.nivel}>
-                <Label>Nivel</Label>
-                <select
-                  name='nivel'
-                  type='text'
-                  value={credentials.nivel}
-                  onChange={handleChange}
-                >
-                  <option value=''></option>
-                  <option value='admin'>admin</option>
-                  <option value='usuario'>usuario</option>
-                </select>
-                {errors.nivel && <span className={styles.error}>{errors.nivel}</span>}
-              </FormField>
-              <FormField error={!!errors.password}>
-                <Label>Contraseña</Label>
-                <Input
-                  name='password'
-                  type='password'
-                  value={credentials.password}
-                  onChange={handleChange}
-                />
-                {errors.password && <span className={styles.error}>{errors.password}</span>}
-              </FormField>
-              <FormField error={!!errors.confirmarPassword}>
-                <Label>Confirmar contraseña</Label>
-                <Input
-                  name='confirmarPassword'
-                  type='password'
-                  value={credentials.confirmarPassword}
-                  onChange={handleChange}
-                />
-                {errors.confirmarPassword && <span className={styles.error}>{errors.confirmarPassword}</span>}
-              </FormField>
-            </FormGroup>
-            {error && <p className={styles.error}>{error}</p>}
-            <Button primary type='submit'>Crear</Button>
-          </Form>
-
-          <div className={styles.link}>
-            <Link href='/join/signin'>
-              Iniciar sesión
-            </Link>
-          </div>
-
-        </div>
+    <div className={styles.main}>
+      <div className={styles.logo}>
+        <Image src='/img/admineventos_join.webp' />
       </div>
+      <div className={styles.boxForm}>
 
-    
+        <div className={styles.user}>
+          <div>
+            <FaUserPlus />
+          </div>
+          <h1>Crear usuario</h1>
+        </div>
+
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <FormField error={!!errors.nombre}>
+              <Label>Nombre</Label>
+              <Input
+                name='nombre'
+                type='text'
+                value={credentials.nombre}
+                onChange={handleChange}
+              />
+              {errors.nombre && <Message negative>{errors.nombre}</Message>}
+            </FormField>
+            <FormField error={!!errors.usuario}>
+              <Label>Usuario</Label>
+              <Input
+                name='usuario'
+                type='text'
+                value={credentials.usuario}
+                onChange={handleChange}
+              />
+              {errors.usuario && <Message negative>{errors.usuario}</Message>}
+            </FormField>
+            <FormField error={!!errors.email}>
+              <Label>Correo</Label>
+              <Input
+                name='email'
+                type='email'
+                value={credentials.email}
+                onChange={handleChange}
+              />
+              {errors.email && <Message negative>{errors.email}</Message>}
+            </FormField>
+            <FormField error={!!errors.nivel}>
+              <Label>Nivel</Label>
+              <select
+                name='nivel'
+                type='text'
+                value={credentials.nivel}
+                onChange={handleChange}
+              >
+                <option value=''></option>
+                <option value='Admin'>Admin</option>
+                <option value='Usuario'>Usuario</option>
+              </select>
+              {errors.nivel && <Message negative>{errors.nivel}</Message>}
+            </FormField>
+            <FormField error={!!errors.password}>
+              <Label>Contraseña</Label>
+              <Input
+                name='password'
+                type='password'
+                value={credentials.password}
+                onChange={handleChange}
+              />
+              {errors.password && <Message negative>{errors.password}</Message>}
+            </FormField>
+            <FormField error={!!errors.confirmarPassword}>
+              <Label>Confirmar contraseña</Label>
+              <Input
+                name='confirmarPassword'
+                type='password'
+                value={credentials.confirmarPassword}
+                onChange={handleChange}
+              />
+              {errors.confirmarPassword && <Message negative>{errors.confirmarPassword}</Message>}
+            </FormField>
+          </FormGroup>
+          {error && <p className={styles.error}>{error}</p>}
+          <Button secondary type='submit'>Crear</Button>
+        </Form>
+
+        <div className={styles.link}>
+          <Link href='/join/signin'>
+            Iniciar sesión
+          </Link>
+        </div>
+
+      </div>
+    </div>
+
+
 
   )
 }

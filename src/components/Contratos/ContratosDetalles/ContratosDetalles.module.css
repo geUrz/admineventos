@@ -25,13 +25,132 @@
   justify-content: center;  
 }
 
+.main div:nth-child(2) div{
+  align-items: flex-end !important;  
+}
+
 .main h1{
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600 !important;
   color: black;
 }
 
 .main h2{
-  font-size: 18px;
+  font-size: 14px;
+  color: var(--clrGR000);
+}
+
+.column2 div:nth-child(1) h2{
+  text-transform: lowercase;
+}
+
+.iconEdit{
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconEdit svg, .iconEdit path{
+  font-size: 26px;
+  color: var(--clrM0);
+  cursor: pointer;
+}
+
+.iconEdit svg:hover, .iconEdit:hover path{
+  color: var(--clrM1);
+}
+
+.iconEdit svg:active, .iconEdit:active path{
+  color: var(--clrM2);
+}
+
+.actionsBottom{
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconDown svg, .iconDown path{
+  margin-left: 20px;
+  font-size: 20px;
+  color: var(--clrGR000);
+  cursor: pointer;
+}
+
+.iconDown svg:hover, .iconDown:hover path{
+  color: var(--clrGR00);
+}
+
+.iconDown svg:active, .iconDown:active path{
   color: var(--clrGR0);
+}
+
+.iconDel{
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+}
+
+.iconDel svg, .iconDel path{
+  margin-right: 20px;
+  font-size: 20px;
+  color: var(--clrGR000);
+  cursor: pointer;
+}
+
+.iconDel svg:hover, .iconDel:hover path{
+  color: var(--clrGR00);
+}
+
+.iconDel svg:active, .iconDel:active path{
+  color: var(--clrGR0);
+}
+
+.iconClose svg, .iconClose path{
+  padding: 8px;
+  font-size: 34px;
+  color: var(--clrGR00);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.iconClose svg:hover,.iconClose path:hover{
+  background-color: var(--clrGR3);
+}
+
+.iconClose svg:active,.iconClose path:active{
+  background-color: var(--clrGR4);
+}
+
+.iconCheck{
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.iconCheck:hover{
+  background-color: var(--clrGR2);
+}
+
+.iconCheck:active{
+  background-color: var(--clrGR3);
+}
+
+.iconCheck svg, .iconCheck path{
+  font-size: 22px;
+  color: var(--clrM0);
+  cursor: pointer;
 }

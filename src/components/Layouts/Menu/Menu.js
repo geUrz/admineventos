@@ -1,7 +1,6 @@
 import { Image } from 'semantic-ui-react'
-import { FaBars, FaBell, FaCalendarAlt, FaHome, FaRegFileCode, FaTimes, FaUserCircle, FaUserFriends } from 'react-icons/fa'
+import { FaBars, FaBell, FaCalendarAlt, FaFileSignature, FaHome, FaTimes, FaUserCircle, FaUserFriends, FaFileAlt, FaFileContract, FaFileInvoice, FaFileInvoiceDollar, FaUsers } from 'react-icons/fa'
 import { useState } from 'react'
-import { FaClipboard, FaFileAlt, FaFileContract, FaFileInvoice, FaFileInvoiceDollar, FaPaperclip, FaUser, FaUsers } from 'react-icons/fa'
 import Link from 'next/link'
 import { useAuth } from '@/contexts/AuthContext'
 import { useRouter } from 'next/router'
@@ -64,7 +63,7 @@ export function Menu() {
             <h1>Recibos</h1>
           </Link>
           <Link href='facturas'>
-            <FaRegFileCode />
+            <FaFileSignature />
             <h1>Facturas</h1>
           </Link>
           <Link href='cuentas'>

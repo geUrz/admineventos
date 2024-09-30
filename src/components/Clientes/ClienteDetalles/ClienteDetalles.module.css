@@ -1,9 +1,13 @@
-.section{
+.main{
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.box1, .box2, .box3{
+.section{
   width: 100%;
   height: auto;
   display: flex;
@@ -12,7 +16,16 @@
   justify-content: center;
 }
 
-.box1 div, .box2 div, .box3 div{
+.box1, .box2{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1 div, .box2 div{
   margin-bottom: 20px;
   width: 100%;
   height: auto;
@@ -22,13 +35,19 @@
   justify-content: center;
 }
 
-.box1 h1, .box2 h1, .box3 h1{
-  font-size: 14px;
-  color: var(--clr2);
+.box2 div{
+  align-items: flex-end;
 }
 
-.box1 h2, .box2 h2, .box3 h2{
+.box1 h1, .box2 h1{
   font-size: 14px;
+  font-weight: 600 !important;
+  color: black;
+}
+
+.box1 h2, .box2 h2{
+  font-size: 14px;
+  color: var(--clrGR000);
 }
 
 .box1 div:nth-child(2) h2, .box2 div:nth-child(1) h2, .box3 div:nth-child(1) h2{
@@ -48,31 +67,27 @@
   justify-content: center;
 }
 
-.iconEdit div{
-  width: 50px;
-  height: 50px;
+.iconEdit{
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg2);
-  cursor: pointer;
 }
 
 .iconEdit svg, .iconEdit path{
-  color: var(--clr2);
-}
-
-.iconEdit div:hover{
-  background-color: var(--bg3);
-}
-
-.iconEdit div:active{
-  background-color: var(--bg4);
-}
-
-.iconEdit svg, .iconEdit path{
-  font-size: 18px;
+  font-size: 26px;
+  color: var(--clrM0);
   cursor: pointer;
+}
+
+.iconEdit div svg:hover, .iconEdit div:hover path{
+  color: var(--clrM1);
+}
+
+.iconEdit div svg:active, .iconEdit div:active path{
+  color: var(--clrM2);
 }
 
 .iconCheck{
@@ -81,16 +96,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg2);
   cursor: pointer;
 }
 
 .iconCheck:hover{
-  background-color: var(--bg3);
+  background-color: var(--clrGR2);
 }
 
 .iconCheck:active{
-  background-color: var(--bg4);
+  background-color: var(--clrGR3);
 }
 
 .iconClose{
@@ -101,11 +115,72 @@
 
 .iconCheck svg, .iconCheck path{
   font-size: 22px;
-  color: var(--clrBL0);
+  color: var(--clrM0);
   cursor: pointer;
 }
 
+.iconDel{
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.iconDel svg, .iconDel path{
+  font-size: 20px;
+  color: var(--clrGR000);
+  cursor: pointer;
+}
+
+.iconDel svg:hover, .iconDel:hover path{
+  color: var(--clrGR00);
+}
+
+.iconDel svg:active, .iconDel:active path{
+  color: var(--clrGR0);
+}
+
 .iconClose svg, .iconClose path{
-  font-size: 18px;
+  padding: 8px;
+  font-size: 34px;
+  color: var(--clrGR00);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.iconClose svg:hover,.iconClose path:hover{
+  background-color: var(--clrGR3);
+}
+
+.iconClose svg:active,.iconClose path:active{
+  background-color: var(--clrGR4);
+}
+
+.iconCheck{
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.iconCheck:hover{
+  background-color: var(--clrGR2);
+}
+
+.iconCheck:active{
+  background-color: var(--clrGR3);
+}
+
+.iconCheck svg, .iconCheck path{
+  font-size: 22px;
+  color: var(--clrM0);
   cursor: pointer;
 }

@@ -11,11 +11,10 @@
   font-size: 12.5px !important;
   color: black !important;
   background-color: azure !important;
-  border-color: var(--clrM2) !important;
 }
 
-.ui.form input:focus, .ui.form textarea:focus, .ui.form select:focus{
-  border-color: var(--clrM0) !important;
+.ui.form input:focus, input:active, .ui.form textarea:focus, .ui.form select:focus{
+  border: 2px solid var(--clrM0) !important;
 }
 
 .ui.form select{
@@ -60,11 +59,11 @@
   width: 100%;
   height: auto;
   font-size: 14px;
-  color: var(--clrGR0) !important;
+  color: var(--clrGR000) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start;
-  background-color: azure !important;
+  background-color: var(--body) !important;
 }
 
 /* .ui input{
@@ -76,7 +75,7 @@
 }
 
 .field.error input, .field.error select, .field.error textarea{
-  border: 1px solid var(--clrR0) !important;
+  border: 2px solid red!important;
 }
 
 .rbc-agenda-view table{
@@ -89,5 +88,18 @@
   border: none !important;
 }
 
+.ui.dropdown .menu .item span, .ui.dropdown .text{
+  color: black !important;
+}
 
+.ui.dropdown{
+  border: 1px solid rgb(223, 223, 223) !important;
+}
 
+.ui.dropdown .menu:focus, .ui.dropdown:focus, .ui.dropdown:active{
+  border: 1px solid var(--clrM0) !important;
+}
+
+.ui.dropdown .menu{
+  border: 1px solid var(--clrM0) !important;
+}

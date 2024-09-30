@@ -1,3 +1,4 @@
 export * from './ContratosLista'
-export * from './ContratosForm'
+export * from './ContratoForm'
 export * from './ContratosDetalles'
+export * from './ContratoEditForm'

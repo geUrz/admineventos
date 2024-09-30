@@ -1,7 +1,7 @@
 .main{
   padding: 10px;
   margin-left: 5px;
-  width: 130px;
+  width: 100px;
   height: 80px;
   display: flex;
   align-items: center;
@@ -20,13 +20,13 @@
 }
 
 .main svg, .main path{
-  font-size: 46px;
+  font-size: 30px;
   color: var(--clrBL4);
   cursor: pointer;
 }
 
 .main h1{
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Bebas' !important;
   cursor: pointer;
 }
