@@ -1,0 +1,61 @@
+.countBox{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconSearchMain{
+  margin-top: 20px;
+  padding: 0 10px; 
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.iconSearch{
+  width: 180px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+} 
+
+.iconSearch h1{
+  margin-right: 10px;
+  font-size: 16px;
+  color: var(--clrGR000);
+} 
+
+.iconSearch svg, .iconSearch path{
+  font-size: 24px;
+  color: var(--clrGR000);
+  cursor: pointer;
+} 
+
+.iconSearch svg:hover, .iconSearch:hover path{
+  color: var(--clrGR00);
+}
+
+.iconSearch svg:active, .iconSearch:active path{
+  color: var(--clrGR0);
+}
+
+.searchMain {
+  padding: 20px;
+  margin-top: 80px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(240, 255, 255, .9);
+  z-index: 1000;
+}

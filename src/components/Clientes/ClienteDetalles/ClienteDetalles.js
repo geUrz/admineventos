@@ -2,7 +2,7 @@ import { FaCheck, FaEdit, FaTimes, FaTrash } from 'react-icons/fa'
 import { IconClose, Confirm } from '@/components/Layouts'
 import { useState } from 'react'
 import { BasicModal } from '@/layouts'
-import { ClienteModForm } from '../ClienteModForm'
+import { ClienteEditForm } from '../ClienteEditForm'
 import { useAuth } from '@/contexts/AuthContext'
 import axios from 'axios'
 import styles from './ClienteDetalles.module.css'
@@ -14,12 +14,8 @@ export function ClienteDetalles(props) {
   const {user} = useAuth()
 
   const [showEdit, setShowEdit] = useState(false)
-  const [clienteSeleccionado, setClienteSeleccionado] = useState(cliente)
 
-  const onOpenCloseEdit = (cliente = null) => {
-    setClienteSeleccionado(cliente)
-    setShowEdit(!showEdit)
-  }
+  const onOpenCloseEdit = () => setShowEdit((prevState) => !prevState)
 
   const [showConfirmDel, setShowConfirmDel] = useState(false)
 
@@ -91,8 +87,8 @@ export function ClienteDetalles(props) {
         )}
       </div>
 
-      <BasicModal title='modificar cliente' show={showEdit} onClose={() => onOpenCloseEdit(null)}>
-        <ClienteModForm reload={reload} onReload={onReload} clienteId={clienteSeleccionado} onOpenCloseEdit={() => onOpenCloseEdit(null)} onToastSuccessClienteMod={onToastSuccessClienteMod} />
+      <BasicModal title='modificar cliente' show={showEdit} onClose={onOpenCloseEdit}>
+        <ClienteEditForm reload={reload} onReload={onReload} cliente={cliente} onOpenCloseEdit={onOpenCloseEdit} onToastSuccessClienteMod={onToastSuccessClienteMod} />
       </BasicModal>
 
       <Confirm

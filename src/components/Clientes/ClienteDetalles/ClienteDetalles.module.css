@@ -54,10 +54,6 @@
   text-transform: capitalize;
 }
 
-.box3 div:nth-child(2) h2{
-  text-transform: lowercase;
-}
-
 .iconEdit{
   margin-top: 20px;
   width: 100%;

@@ -11,7 +11,7 @@ const connection = mysql.createPool({
   queueLimit: 0
 });
 
-export default connection  
+export default connection   
 
 /* import mysql from 'mysql2/promise';
 
@@ -26,5 +26,5 @@ const connection  = mysql.createPool({
   queueLimit: 0
 });
 
-export default connection   */ 
+export default connection    */
 

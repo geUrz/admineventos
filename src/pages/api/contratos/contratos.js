@@ -38,7 +38,7 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     if(id) {
       try {
-        const [rows] = await connection.query('SELECT id, folio, tipo, cliente, descripcion, estado, updatedAt, createdAt FROM contratos WHERE id = ?', [id])
+        const [rows] = await connection.query('SELECT id, usuario_id, folio, tipo, cliente, descripcion, estado, updatedAt, createdAt FROM contratos WHERE id = ?', [id])
 
         if (rows.length === 0) {
           return res.status(404).json({ error: 'Contrato no encontrado' });
@@ -58,11 +58,11 @@ export default async function handler(req, res) {
       }
     }
   } else if (req.method === 'POST') {
-    const { folio, tipo, cliente, descripcion, estado } = req.body;
+    const { usuario_id, folio, tipo, cliente, descripcion, estado } = req.body;
 
     try {
-      const query = 'INSERT INTO contratos (folio, tipo, cliente, descripcion, estado) VALUES (?, ?, ?, ?, ?)';
-      const values = [folio, tipo, cliente, descripcion, estado]
+      const query = 'INSERT INTO contratos (usuario_id, folio, tipo, cliente, descripcion, estado) VALUES (?, ?, ?, ?, ?, ?)';
+      const values = [usuario_id, folio, tipo, cliente, descripcion, estado]
 
       const header = 'Contrato'
       const message = `${tipo}`

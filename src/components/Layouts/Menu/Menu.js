@@ -1,10 +1,11 @@
 import { Image } from 'semantic-ui-react'
 import { FaBars, FaBell, FaCalendarAlt, FaFileSignature, FaHome, FaTimes, FaUserCircle, FaUserFriends, FaFileAlt, FaFileContract, FaFileInvoice, FaFileInvoiceDollar, FaUsers } from 'react-icons/fa'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useAuth } from '@/contexts/AuthContext'
 import { useRouter } from 'next/router'
 import styles from './Menu.module.css'
+import axios from 'axios'
 
 export function Menu() {
 
@@ -16,14 +17,34 @@ export function Menu() {
 
   const onMenu = () => setMenu((prevState) => !prevState)
 
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  useEffect(() => {
+    const fetchUnreadCount = async () => {
+      if (user && user.id) { // Verifica que el usuario y su ID estén disponibles
+        try {
+          const response = await axios.get('/api/notificaciones/unread-count', {
+            params: { usuario_id: user.id } // Pasa el ID del usuario a la API
+          });
+          setUnreadCount(response.data.count);
+        } catch (error) {
+          console.error('Error fetching unread notifications count:', error);
+        }
+      }
+    };
+
+    fetchUnreadCount();
+  }, [user])
+
   return (
 
     <>
     
       <div className={styles.mainTop}>
-        <div className={styles.iconBell} onClick={onMenu}>
+        <Link href='/notificaciones' className={styles.mainNoti}>
           <FaBell />
-        </div>
+          {unreadCount > 0 && <span className={styles.notiCount}>{unreadCount}</span>}
+          </Link>
         <Link href='/'>
           <Image src='img/admineventos_logo.webp' />
         </Link>

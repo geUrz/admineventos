@@ -4,10 +4,13 @@ import { useState } from 'react'
 import { genCLId } from '@/helpers'
 import axios from 'axios'
 import styles from './ClienteForm.module.css'
+import { useAuth } from '@/contexts/AuthContext'
 
 export function ClienteForm(props) {
 
   const { reload, onReload, onToastSuccess, onOpenClose } = props
+
+  const {user} = useAuth()
 
   const [nombre, setNombre] = useState('')
   const [cel, setCel] = useState('')
@@ -46,6 +49,7 @@ export function ClienteForm(props) {
 
     try {
       await axios.post ('/api/clientes/clientes', {
+        usuario_id: user.id,
         folio,
         nombre, 
         cel, 

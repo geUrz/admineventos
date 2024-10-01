@@ -1,13 +1,23 @@
 .react-datepicker__day--selected {
-  background-color: var(--clrBL0) !important; /* Color que deseas */
+  background-color: var(--clrM0) !important; /* Color que deseas */
   color: white !important; /* Color del texto */
   border-radius: 50% !important;
 }
 
 .react-datepicker__day--hovered {
-  background-color: var(--clrBL1) !important; /* Color al pasar el mouse */
+  background-color: var(--clrM4)  !important; /* Color al pasar el mouse */
   color: white !important; /* Color del texto */
   border-radius: 50% !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--clrM6) !important; /* Color al pasar el mouse */
+  color: white !important; /* Color del texto */
+  border-radius: 50% !important;
+}
+
+.react-datepicker__close-icon::after{
+  background-color: var(--clrGR0) !important; /* Color al pasar el mouse */
 }
 
 .react-datepicker__day {

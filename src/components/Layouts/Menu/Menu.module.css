@@ -23,13 +23,38 @@
   cursor: pointer;
 }
 
-.iconBell{
-  margin-left: 20px;
+.iconBar svg, .iconBar path, .iconBell svg, .iconBell path{
+  font-size: 26px;
   cursor: pointer;
 }
 
-.iconBar svg, .iconBar path, .iconBell svg, .iconBell path{
-  font-size: 26px;
+.mainNoti{
+  margin-left: 30px;
+  width: 30px;
+  height: auto;
+  position: relative;
+}
+
+.mainNoti svg, .mainNoti path{
+  margin: 0px;
+  font-size: 24px; 
+  cursor: pointer;
+}
+
+.notiCount {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -5px;
+  right: 2px;
+  background-color: var(--clrM0);
+  color: white;
+  border-radius: 50%;
+  font-size: 8.5px;
+  font-weight: 600 !important;
   cursor: pointer;
 }
 
