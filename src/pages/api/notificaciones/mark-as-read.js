@@ -3,15 +3,23 @@ import connection from '@/libs/db';
 
 export default async function handler(req, res) {
   if (req.method === 'PUT') {
-    const { usuario_id } = req.body;
+    const { usuario_id, notificacion_id, is_read } = req.body;
 
-    if (!usuario_id) {
-      return res.status(400).json({ error: 'Usuario ID es obligatorio' });
+    if (!usuario_id || !notificacion_id || is_read === undefined) {
+      return res.status(400).json({ error: 'Usuario ID, Notificación ID, y is_read son obligatorios' });
     }
 
     try {
-      await connection.query('UPDATE notificaciones SET is_read = 1 WHERE usuario_id = ?', [usuario_id]);
-      res.status(200).json({ message: 'Notificaciones marcadas como leídas' });
+      const result = await connection.query(
+        'UPDATE notificaciones SET is_read = ? WHERE usuario_id = ? AND id = ?',
+        [is_read, usuario_id, notificacion_id]
+      );
+      
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ error: 'Notificación no encontrada' });
+      }
+
+      res.status(200).json({ message: 'Notificación actualizada correctamente' });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }

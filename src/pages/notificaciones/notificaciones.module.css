@@ -116,29 +116,22 @@
   width: 70%;
 }
 
-.column2 div:nth-child(3){
-  padding: 0 5px;
-  width: 11.5%;
+.iconCheck{
+  padding: 12.5px 5px !important;
+  width: 11.5% !important;
   height: 36.5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.column2 div:nth-child(3) svg, .column2 div:nth-child(3) path{
+.iconCheck svg, .iconCheck path{
   font-size: 20px;
   color: var(--clrGR0);
   cursor: pointer;
 }
 
-.column2 div:nth-child(3) svg:hover path{
-  color: var(--clrGR1);
-}
-
-.column2 div:nth-child(3) svg:active path{
-  color: var(--clrGR2);
-}
-
 .checkActive svg, .checkActive path{
   color: var(--clrM0) !important;
+  cursor: pointer;
 }
