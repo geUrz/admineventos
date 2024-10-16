@@ -9,11 +9,11 @@ import { ToastSuccess } from '@/components/Layouts'
 import DatePicker, { registerLocale } from 'react-datepicker'
 import es from 'date-fns/locale/es'
 import 'react-datepicker/dist/react-datepicker.css'
-import styles from './EventoEditForm.module.css'
+import styles from './InvitadoEditForm.module.css'
 
 registerLocale('es', es)
 
-export function EventoEditForm(props) {
+export function InvitadoEditForm(props) {
 
   const { reload, onReload, evento, onOpenEditEvento, onToastSuccessEventoMod } = props
 
@@ -111,11 +111,6 @@ export function EventoEditForm(props) {
     }, 3000)
   }
 
-  const opcionesEstado = [
-    { key: 1, text: 'Pendiente', value: 'Pendiente' },
-    { key: 2, text: 'En proceso', value: 'En proceso' },
-    { key: 3, text: 'Realizada', value: 'Realizada' }
-  ]
 
   return (
 
@@ -198,22 +193,26 @@ export function EventoEditForm(props) {
             />
             {errors.date && <span className={styles.error}>{errors.date}</span>}
           </FormField>
-          <FormField>
-              <Label>
-                Estatus
-              </Label>
-              <Dropdown
-                placeholder='Selecciona una opción'
-                fluid
-                selection
-                options={opcionesEstado}
-                value={formData.estado}
-                onChange={(e, { value }) => setFormData({ ...formData, estado: value })}
-              />
-              {errors.estado && <Message negative>{errors.estado}</Message>}
+          <FormField error={!!errors.estado}>
+            <Label>
+              Estatus
+            </Label>
+            <FormField
+              name='estado'
+              type="text"
+              control='select'
+              value={formData.estado}
+              onChange={handleChange}
+            >
+              <option value=''></option>
+              <option value='Pendiente'>Pendiente</option>
+              <option value='En proceso'>En proceso</option>
+              <option value='Terminada'>Realizada</option>
             </FormField>
+            {errors.estado && <Message negative>{errors.estado}</Message>}
+          </FormField>
         </FormGroup>
-        <Button secondary onClick={handleSubmit}>
+        <Button primary onClick={handleSubmit}>
           Guardar
         </Button>
       </Form>

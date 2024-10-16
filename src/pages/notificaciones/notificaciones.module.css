@@ -117,12 +117,16 @@
 }
 
 .iconCheck{
-  padding: 12.5px 5px !important;
+  padding: 8.5px 5px !important;
   width: 11.5% !important;
   height: 36.5px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.iconCheck div{
+  cursor: pointer;
 }
 
 .iconCheck svg, .iconCheck path{

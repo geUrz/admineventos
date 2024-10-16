@@ -17,7 +17,7 @@
 }
 
 .react-datepicker__close-icon::after{
-  background-color: var(--clrGR0) !important; /* Color al pasar el mouse */
+  background-color: var(--clrM0) !important; /* Color al pasar el mouse */
 }
 
 .react-datepicker__day {

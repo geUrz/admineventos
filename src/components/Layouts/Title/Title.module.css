@@ -10,7 +10,7 @@
 .title h1{
   font-size: 30px;
   font-family: 'Bebas' !important;
-  color: var(--clrGR0);
+  color: var(--clrGR000);
 }
 
 .title svg, .title path{

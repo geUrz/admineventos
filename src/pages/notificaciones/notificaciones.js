@@ -126,9 +126,13 @@ export default function Notificaciones() {
                 </div>
                 <div className={styles.iconCheck}>
                   {notificacion.is_read === 1 ? (
-                    <FaCheck className={styles.checkActive} onClick={() => markAsUnread(notificacion.id)} />
+                    <div onClick={() => markAsUnread(notificacion.id)}>
+                      <FaCheck className={styles.checkActive} />
+                    </div>
                   ) : (
-                    <FaCheck onClick={() => markAsRead(notificacion.id)} />
+                    <div onClick={() => markAsRead(notificacion.id)}>
+                      <FaCheck />
+                    </div>
                   )}
                 </div>
               </div>

@@ -18,36 +18,11 @@ export function Menu() {
 
   const onMenu = () => setMenu((prevState) => !prevState);
 
-  const { unreadCount, setUnreadCount } = useNotification(); // Obtiene el contador y la función para actualizarlo
-
-  const fetchUnreadCount = async () => {
-    if (user && user.id) {
-      try {
-        const response = await axios.get('/api/notificaciones/unread-count', {
-          params: { usuario_id: user.id }
-        });
-        setUnreadCount(response.data.count); // Actualiza el contador en el contexto
-      } catch (error) {
-        console.error('Error fetching unread notifications count:', error);
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (user && user.id) {
-      fetchUnreadCount(); // Llama a la función para obtener el conteo al montar
-    }
-  }, [user])
-
   return (
 
     <>
 
       <div className={styles.mainTop}>
-        <Link href='/notificaciones' className={styles.mainNoti}>
-          <FaBell />
-          {unreadCount > 0 && <span className={styles.notiCount}>{unreadCount}</span>}
-        </Link>
         <Link href='/'>
           <Image src='img/admineventos_logo.webp' />
         </Link>

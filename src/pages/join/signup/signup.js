@@ -1,4 +1,4 @@
-import { Button, Form, FormField, FormGroup, Image, Input, Label, Message } from 'semantic-ui-react'
+import { Button, Dropdown, Form, FormField, FormGroup, Image, Input, Label, Message } from 'semantic-ui-react'
 import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
@@ -26,10 +26,10 @@ export default function Signup() {
 
   const [error, setError] = useState(null)
 
-  const handleChange = (e) => {
+  const handleChange = (e, { name, value }) => {
     setCredentials({
       ...credentials,
-      [e.target.name]: e.target.value
+      [name]: value
     })
   }
 
@@ -113,7 +113,6 @@ export default function Signup() {
         <Image src='/img/admineventos_join.webp' />
       </div>
       <div className={styles.boxForm}>
-
         <div className={styles.user}>
           <div>
             <FaUserPlus />
@@ -122,17 +121,7 @@ export default function Signup() {
         </div>
 
         <Form onSubmit={handleSubmit}>
-          <FormGroup>
-            <FormField error={!!errors.nombre}>
-              <Label>Nombre</Label>
-              <Input
-                name='nombre'
-                type='text'
-                value={credentials.nombre}
-                onChange={handleChange}
-              />
-              {errors.nombre && <Message negative>{errors.nombre}</Message>}
-            </FormField>
+          <FormGroup widths='equal'>
             <FormField error={!!errors.usuario}>
               <Label>Usuario</Label>
               <Input
@@ -142,6 +131,16 @@ export default function Signup() {
                 onChange={handleChange}
               />
               {errors.usuario && <Message negative>{errors.usuario}</Message>}
+            </FormField>
+            <FormField error={!!errors.nombre}>
+              <Label>Nombre</Label>
+              <Input
+                name='nombre'
+                type='text'
+                value={credentials.nombre}
+                onChange={handleChange}
+              />
+              {errors.nombre && <Message negative>{errors.nombre}</Message>}
             </FormField>
             <FormField error={!!errors.email}>
               <Label>Correo</Label>
@@ -155,16 +154,18 @@ export default function Signup() {
             </FormField>
             <FormField error={!!errors.nivel}>
               <Label>Nivel</Label>
-              <select
+              <Dropdown
+                placeholder='Selecciona nivel'
+                fluid
+                selection
+                options={[
+                  { key: 'Admin', text: 'Admin', value: 'Admin' },
+                  { key: 'Usuario', text: 'Usuario', value: 'Usuario' },
+                ]}
                 name='nivel'
-                type='text'
                 value={credentials.nivel}
                 onChange={handleChange}
-              >
-                <option value=''></option>
-                <option value='Admin'>Admin</option>
-                <option value='Usuario'>Usuario</option>
-              </select>
+              />
               {errors.nivel && <Message negative>{errors.nivel}</Message>}
             </FormField>
             <FormField error={!!errors.password}>

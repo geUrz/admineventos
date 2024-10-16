@@ -59,7 +59,8 @@
   width: 100%;
   height: auto;
   font-size: 14px;
-  color: var(--clrGR000) !important;
+  color: var(--clrM0) !important;
+  font-weight: 600 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start;

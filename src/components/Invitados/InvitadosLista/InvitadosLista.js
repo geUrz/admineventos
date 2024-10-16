@@ -3,27 +3,27 @@ import { size, map } from 'lodash'
 import { FaCalendarAlt, FaInfoCircle } from 'react-icons/fa'
 import { useEffect, useState } from 'react'
 import { BasicModal } from '@/layouts'
-import { EventoDetalles } from '../EventoDetalles'
+import { InvitadoDetalles } from '../InvitadoDetalles'
 import axios from 'axios'
-import styles from './EventosLista.module.css'
+import styles from './InvitadosLista.module.css'
 
-export function EventosLista(props) {
+export function InvitadosLista(props) {
 
-  const { reload, onReload, eventos, onToastSuccessEventoMod, onToastSuccessEventoDel } = props
+  const { reload, onReload, invitados, onToastSuccessInvitadoMod, onToastSuccessInvitadoDel } = props
 
   const [show, setShow] = useState(false)
   const [showLoading, setShowLoading] = useState(true)
 
-  const [eventoSelec, setEventoSelec] = useState(null)
+  const [invitadoSelec, setInvitadoSelec] = useState(null)
 
-  const onOpenClose = async (evento) => {
+  const onOpenClose = async (invitado) => {
     try {
-      const res = await axios.get(`/api/eventos/eventos?id=${evento.id}`)
-      setEventoSelec(res.data)
+      const res = await axios.get(`/api/invitados/invitados?id=${invitado.id}`)
+      setInvitadoSelec(res.data)
       setShow(true)
       onReload()  
     } catch (error) {
-      console.error('Error al obtener el evento:', error)
+      console.error('Error al obtener el invitado:', error)
       if (error.response) {
         console.error('Error response:', error.response.data)
       }
@@ -32,7 +32,7 @@ export function EventosLista(props) {
 
   const handleCloseModal = () => {
     setShow(false)
-    setEventoSelec(null)
+    setInvitadoSelec(null)
   }
 
   useEffect(() => {
@@ -50,23 +50,26 @@ export function EventosLista(props) {
       {showLoading ? (
         <Loading size={45} loading={1} />
       ) : (
-        size(eventos) === 0 ? (
+        size(invitados) === 0 ? (
           <ListEmpty />
         ) : (
           <div className={styles.mainRow}>
-            {map(eventos, (evento) => (
-              <div key={evento.id} className={styles.mainRowMap} onClick={() => onOpenClose(evento)}>
+            {map(invitados, (invitado) => (
+              <div key={invitado.id} className={styles.mainRowMap}>
                 <div className={styles.mainRowMap1}>
                   <FaCalendarAlt />
                 </div>
                 <div className={styles.mainRowMap2}>
                   <div>
                     <h1>Evento</h1>
-                    <h2>{evento.tipo}</h2>
+                    <h2>{invitado.tipo}</h2>
                   </div>
                   <div>
                     <h1>Cliente</h1>
-                    <h2>{evento.cliente}</h2>
+                    <h2>{invitado.cliente}</h2>
+                  </div>
+                  <div onClick={() => onOpenClose(invitado)}>
+                    <FaInfoCircle />
                   </div>
                 </div>
               </div>
@@ -75,8 +78,8 @@ export function EventosLista(props) {
         )
       )}
 
-      <BasicModal title='detalles del evento' show={show} onClose={onOpenClose}>
-        <EventoDetalles reload={reload} onReload={onReload} evento={eventoSelec} onOpenCloseDetalles={handleCloseModal} onToastSuccessEventoMod={onToastSuccessEventoMod} onToastSuccessEventoDel={onToastSuccessEventoDel} />
+      <BasicModal title='detalles del invitado' show={show} onClose={onOpenClose}>
+        <InvitadoDetalles reload={reload} onReload={onReload} invitado={invitadoSelec} onOpenCloseDetalles={handleCloseModal} onToastSuccessInvitadoMod={onToastSuccessInvitadoMod} onToastSuccessInvitadoDel={onToastSuccessInvitadoDel} />
       </BasicModal>
 
     </>

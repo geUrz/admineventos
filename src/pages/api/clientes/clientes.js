@@ -39,7 +39,7 @@ export default async function handler(req, res) {
         if (id) {
             // Obtener un cliente por ID
             try {
-                const [rows] = await connection.query('SELECT id, usuario_id, folio, nombre, cel, email, createdAt FROM clientes WHERE id = ?', [id])
+                const [rows] = await connection.query('SELECT id, usuario_id, folio, nombre, cel, email, is_active, createdAt FROM clientes WHERE id = ?', [id])
 
                 if (rows.length === 0) {
                     return res.status(404).json({ error: 'Cliente no encontrado' });
@@ -52,7 +52,7 @@ export default async function handler(req, res) {
         } else {
             // Obtener todos los clientes
             try {
-                const [rows] = await connection.query('SELECT id, usuario_id, folio, nombre, cel, email, createdAt FROM clientes');
+                const [rows] = await connection.query('SELECT id, usuario_id, folio, nombre, cel, email, is_active, createdAt FROM clientes');
                 res.status(200).json(rows)
             } catch (error) {
                 res.status(500).json({ error: error.message })
@@ -60,12 +60,12 @@ export default async function handler(req, res) {
         }
     } else if (req.method === 'POST') {
         try {
-            const { usuario_id, folio, nombre, cel, email } = req.body
-            if (!usuario_id || !folio || !nombre || !cel || !email) {
+            const { usuario_id, folio, nombre, cel, email, is_active } = req.body
+            if (!usuario_id || !folio || !nombre || !cel || !email || !is_active) {
                 return res.status(400).json({ error: 'Todos los datos son obligatorios' })
             }
 
-            const [result] = await connection.query('INSERT INTO clientes (usuario_id, folio, nombre, cel, email) VALUES (?, ?, ?, ?, ?)', [usuario_id, folio, nombre, cel, email])
+            const [result] = await connection.query('INSERT INTO clientes (usuario_id, folio, nombre, cel, email, is_active) VALUES (?, ?, ?, ?, ?, ?)', [usuario_id, folio, nombre, cel, email, is_active])
 
             const header = 'Cliente'
             const message = `${nombre}`
@@ -82,14 +82,14 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'ID del cliente es obligatorio' })
         }
 
-        const { nombre, cel, email } = req.body
+        const { nombre, cel, email, is_active } = req.body
 
-        if (!nombre || !cel || !email) {
+        if (!nombre || !cel || !email || !is_active) {
             return res.status(400).json({ error: 'Todos los datos son obligatorios' })
         }
 
         try {
-            const [result] = await connection.query('UPDATE clientes SET nombre = ?, cel = ?, email = ? WHERE id = ?', [nombre, cel, email, id])
+            const [result] = await connection.query('UPDATE clientes SET nombre = ?, cel = ?, email = ?, is_active= ? WHERE id = ?', [nombre, cel, email, is_active, id])
 
             if (result.affectedRows === 0) {
                 return res.status(404).json({ error: 'Cliente no encontrado' })
